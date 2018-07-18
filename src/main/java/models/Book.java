@@ -55,4 +55,5 @@ public class Book implements IDB {
     public void setOnLoan(boolean onLoan) {
         this.onLoan = onLoan;
     }
+
 }
