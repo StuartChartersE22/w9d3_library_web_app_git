@@ -17,4 +17,10 @@ public class BorrowerTest {
     public void hasId() {
         assertEquals(0, borrower.getId());
     }
+
+    @Test
+    public void canSetId() {
+        borrower.setId(25);
+        assertEquals(25, borrower.getId());
+    }
 }
