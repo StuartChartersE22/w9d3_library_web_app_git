@@ -52,4 +52,8 @@ public class Borrower implements IDB {
     public void setItemsBorrowed(List<Book> itemsBorrowed) {
         this.itemsBorrowed = itemsBorrowed;
     }
+
+    public void addBook(Book book) {
+        this.itemsBorrowed.add(book);
+    }
 }

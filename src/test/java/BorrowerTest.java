@@ -1,3 +1,4 @@
+import models.Book;
 import models.Borrower;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,10 +8,12 @@ import static org.junit.Assert.assertEquals;
 public class BorrowerTest {
 
     Borrower borrower;
+    Book book;
 
     @Before
     public void before() {
         this.borrower = new Borrower("Stuart", 0001);
+        this.book = new Book();
     }
 
     @Test
@@ -49,5 +52,11 @@ public class BorrowerTest {
     @Test
     public void itemsBorrowedStartsEmpty() {
         assertEquals(0, borrower.getItemsBorrowed().size());
+    }
+
+    @Test
+    public void canAddBook() {
+        borrower.addBook(book);
+        assertEquals(1, borrower.getItemsBorrowed().size());
     }
 }
