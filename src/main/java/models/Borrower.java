@@ -2,10 +2,13 @@ package models;
 
 import behaviours.IDB;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+@Entity
+@Table(name = "borrowers")
 public class Borrower implements IDB {
 
     private int id;
@@ -21,6 +24,9 @@ public class Borrower implements IDB {
         this.itemsBorrowed = new ArrayList<Book>();
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,6 +35,7 @@ public class Borrower implements IDB {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -37,6 +44,7 @@ public class Borrower implements IDB {
         this.name = name;
     }
 
+    @Column(name = "library_number")
     public int getLibraryNumber() {
         return libraryNumber;
     }
@@ -45,6 +53,7 @@ public class Borrower implements IDB {
         this.libraryNumber = libraryNumber;
     }
 
+    @Column(name = "items_borrowed")
     public List<Book> getItemsBorrowed() {
         return itemsBorrowed;
     }
